@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 # Connessione al database MongoDB
 client = MongoClient("mongodb://localhost:27017/")
-db = client["car_project"]  # <-- nome del tuo database
+db = client["car_project"] #nome database
 cars_col = db["cars"]
 reviews_col = db["reviews"]
 
