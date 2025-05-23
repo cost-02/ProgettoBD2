@@ -9,11 +9,13 @@
     <ul>
         {% for review in reviews %}
         <li>
-            <strong>Auto ID: {{ review['id_car'] }}</strong><br>
-            Utente: {{ review['user'] }}<br>
-            Voto: {{ review['rating'] }}<br>
-            Testo: {{ review['text'] }}
+            <strong>Auto ID: {{ review['car_id'] }}</strong><br>
+            <strong>Utente: {{ review['Author_Name'] }}</strong><br>
+            <strong>Voto: {{ review['Rating'] }}</strong><br>
+            <strong>Recensione: {{review['Review_Title']}}</strong><br>
+            {{ review['Review'] }}
         </li>
+        <br>
         {% endfor %}
     </ul>
 </body>

@@ -1,0 +1,29 @@
+<!DOCTYPE html> 
+<html>
+<head> 
+<title>JOIN: Recensioni con Auto</title> 
+</head> 
+<body> 
+<h1>Recensioni con Informazioni sull'Auto</h1> 
+    <a href="/">Torna alla Home</a>
+        <ul> {% for review in reviews %} <li> 
+
+            {% if review.car_info and review.car_info[0] %}
+                <strong>Auto:</strong>
+                {{ review.car_info[0]['Make'] }} {{ review.car_info[0]['Model'] }}
+                ({{ review.car_info[0]['Year'] }})
+            {% else %}
+            <strong>Auto:</strong> Non trovata
+            {% endif %}
+            <br>
+            <strong>Utente:</strong> {{ review['Author_Name'] }}<br>
+            <strong>Voto:</strong> {{ review['Rating'] }}<br> 
+            <strong>Recensione:</strong> {{ review['Review_Title'] }}<br> 
+            {{review['Review']}}<br>
+
+        
+    </li>
+    <hr>
+    {% endfor %}
+</ul>
+</body> </html>
