@@ -2,33 +2,33 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Aggiungi Recensione</title>
+    <title>Modifica Recensione</title>
 </head>
 <body>
-    <h1>Inserisci una Nuova Recensione</h1>
+    <h1>Modifica Recensione</h1>
     <form method="POST">
         <label for="car_id">Auto:</label>
         <select name="car_id" required>
             {% for car in cars %}
-                <option value="{{ car['id'] }}">
+                <option value="{{ car['id'] }}" {% if car['id'] == review['car_id'] %}selected{% endif %}>
                     {{ car['id'] }} - {{ car['Make'] }} {{ car['Model'] }}
                 </option>
             {% endfor %}
         </select><br><br>
 
         <label for="author">Autore:</label>
-        <input type="text" name="author" required><br><br>
+        <input type="text" name="author" value="{{ review['Author_Name'] }}" required><br><br>
 
         <label for="rating">Voto (0-5):</label>
-        <input type="number" name="rating" min="0" max="5" step="0.1" required><br><br>
+        <input type="number" name="rating" min="0" max="5" step="0.1" value="{{ review['Rating'] }}" required><br><br>
 
         <label for="title_review">Titolo:</label><br>
         <textarea name="title_review" rows="1" required></textarea><br><br>
 
         <label for="text">Recensione:</label><br>
-        <textarea name="text" rows="5" cols="50" required></textarea><br><br>
+        <textarea name="text" rows="5" cols="50" required>{{ review['Review'] }}</textarea><br><br>
 
-        <button type="submit">Invia Recensione</button>
+        <button type="submit">Salva Modifiche</button>
     </form>
     <br>
     <a href="/">Torna alla Home</a>
