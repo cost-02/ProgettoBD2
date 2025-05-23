@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Lista Auto</title>
-</head>
+    <title>Auto</title> 
+</head> 
 <body>
     <h1>Lista delle Auto</h1>
-    <a href="/">Torna alla Home</a>
-    <ul>
-        {% for car in cars %}
-        <li>
-            <strong>{{ car['Make'] }} {{ car['Model'] }}</strong> - {{ car.get('Year', 'Anno non disponibile') }}
-        </li>
-        {% endfor %}
-    </ul>
+        <a href="/">Torna alla Home</a> | <a href="/add_car">Aggiungi nuova auto</a>
+        <ul> {% for car in cars %}
+            <li> {{ car['Make'] }} {{ car['Model'] }} ({{ car['Year'] }})
+                <form action="{{ url_for('delete_car', car_id=car['_id']) }}" method="POST" style="display:inline;"> 
+                  <button type="submit" onclick="return confirm('Vuoi eliminare questa auto?')">Elimina</button> 
+                </form> 
+                <a href="{{ url_for('edit_car', car_id=car['_id']) }}">Modifica</a> 
+            </li> {% endfor %}
+         </ul>
 </body>
 </html>

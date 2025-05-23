@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modifica Auto</title>
+</head>
+<body> 
+    <h1>Modifica Auto</h1> 
+    <form method="POST"> Marca: <input type="text" name="make" value="{{ car['Make'] }}" required><br> 
+        Modello: <input type="text" name="model" value="{{ car['Model'] }}" required>
+        <br> Anno: <input type="number" name="year" value="{{ car['Year'] }}" required><br> 
+        <button type="submit">Aggiorna</button> </form> <a href="/cars">Torna alla lista auto</a> 
+</body> 
+</html>
