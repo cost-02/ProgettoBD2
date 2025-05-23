@@ -1,0 +1,165 @@
+/* Body e colori generali scuri */
+body {
+    background-color: #1e1e2f;
+    color: #cfcfe8;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px 40px;
+}
+
+/* Titoli */
+h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #8ab4f8;
+}
+
+h2 {
+    margin-top: 40px;
+    margin-bottom: 15px;
+    color: #82aaff;
+    border-bottom: 2px solid #6272a4;
+    padding-bottom: 6px;
+}
+
+h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: #c3c6ff;
+}
+
+/* Link navigazione */
+nav {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+nav a {
+    color: #8ab4f8;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ff79c6;
+}
+
+/* Barra filtri */
+.filter-bar {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.filter-bar form button {
+    background: #44475a;
+    border: none;
+    color: #ddd;
+    margin: 5px 8px;
+    padding: 8px 18px;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.filter-bar form button:hover {
+    background: #6272a4;
+    color: white;
+}
+
+.filter-bar form button.active {
+    background: #3b82f6;
+    color: white;
+    box-shadow: 0 0 8px #3b82f6;
+}
+
+/* Sezione per marca */
+.make-card {
+    background-color: #2e2e44;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+/* Container per le auto (flexbox) */
+.cars-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Card singola auto */
+.car-card {
+    background-color: #44475a;
+    border-radius: 10px;
+    padding: 15px 20px;
+    flex: 1 1 220px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #f8f8f2;
+    transition: background-color 0.3s ease;
+
+}
+
+.car-card-link {
+text-decoration: none;
+color: inherit;
+display: block;
+height: 100%;
+}
+
+.car-card:hover {
+    background-color: #6272a4;
+}
+
+
+/* Azioni: contenitore bottoni */
+.actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+/* Stile bottoni */
+.btn {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.9rem;
+    text-align: center;
+    min-width: 80px;
+    transition: background-color 0.3s ease;
+    color: white;
+    text-decoration: none; /* per il link Modifica */
+    display: inline-block;
+    user-select: none;
+}
+
+.delete-btn {
+    background-color: transparent;
+    border: #ff4444 3px solid;
+}
+
+.delete-btn:hover {
+    background-color: #ff4444;
+}
+
+.edit-btn {
+    background-color: transparent;
+    border: #ffff66 3px solid;
+}
+
+.edit-btn:hover {
+    background-color: #ffff66 ;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: black;
+}

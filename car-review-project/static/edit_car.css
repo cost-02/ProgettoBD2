@@ -1,0 +1,96 @@
+/* Stile generale body */
+body {
+    background-color: #1e1e2f;
+    color: #cfcfe8;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 40px;
+}
+
+/* Titolo principale */
+h1 {
+    color: #8ab4f8;
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+}
+
+/* Form */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #2e2e44;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.7);
+}
+
+/* Label */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #82aaff;
+}
+
+/* Select, input text and number, textarea */
+select,
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: none;
+    background-color: #44475a;
+    color: #ddd;
+    font-size: 1rem;
+    font-family: inherit;
+    margin-bottom: 20px;
+    resize: vertical;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+}
+
+select:focus,
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+    outline: none;
+    background-color: #6272a4;
+    color: white;
+}
+
+/* Button submit */
+button[type="submit"] {
+    background-color: #3b82f6;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 0 auto;
+}
+
+button[type="submit"]:hover {
+    background-color: #285fc1;
+}
+
+/* Link Torna alla Home */
+a {
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+    color: #8ab4f8;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ff79c6;
+}

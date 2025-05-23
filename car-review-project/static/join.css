@@ -1,0 +1,136 @@
+/* Body e colori generali scuri */
+body {
+    background-color: #1e1e2f;
+    color: #cfcfe8;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px 40px;
+}
+
+/* Titoli */
+h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #8ab4f8;
+}
+
+h2 {
+    margin-top: 40px;
+    margin-bottom: 15px;
+    color: #82aaff;
+    border-bottom: 2px solid #6272a4;
+    padding-bottom: 6px;
+}
+
+h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: #c3c6ff;
+}
+
+/* Link navigazione */
+nav {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+nav a {
+    color: #8ab4f8;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ff79c6;
+}
+
+/* Barra filtri */
+.filter-bar {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.filter-bar form button {
+    background: #44475a;
+    border: none;
+    color: #ddd;
+    margin: 5px 8px;
+    padding: 8px 18px;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.filter-bar form button:hover {
+    background: #6272a4;
+    color: white;
+}
+
+.filter-bar form button.active {
+    background: #3b82f6;
+    color: white;
+    box-shadow: 0 0 8px #3b82f6;
+}
+
+/* Sezione per marca */
+.make-card {
+    background-color: #2e2e44;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+/* Container recensioni */
+.reviews-container {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Card recensione */
+.review-container {
+    background-color: #44475a;
+    border-radius: 10px;
+    padding: 18px 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+    line-height: 1.4;
+    color: #f8f8f2;
+}
+
+/* Se vuoi azioni per ogni recensione, usa .actions come in cars.css */
+/* .actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 15px;
+} */
+
+/* Stile bottoni (se li aggiungi) */
+/* .btn {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.9rem;
+    text-align: center;
+    min-width: 80px;
+    transition: background-color 0.3s ease;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    user-select: none;
+} */
+
+/* Separatore tra recensioni, se vuoi */
+hr {
+    border: none;
+    height: 1px;
+    background-color: #6272a4;
+    margin: 20px 0;
+}

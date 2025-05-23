@@ -1,0 +1,127 @@
+body {
+background-color: #1e1e2f;
+color: #cfcfe8;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+margin: 20px 40px;
+}
+
+h1 {
+font-size: 2.8rem;
+margin-bottom: 20px;
+text-align: center;
+color: #8ab4f8;
+}
+
+nav {
+text-align: center;
+margin-bottom: 30px;
+}
+
+nav a {
+color: #8ab4f8;
+text-decoration: none;
+font-weight: 600;
+margin: 0 15px;
+font-size: 1rem;
+transition: color 0.3s ease;
+}
+
+nav a:hover {
+color: #ff79c6;
+}
+
+.review-list {
+list-style: none;
+padding: 0;
+max-width: 900px;
+margin: 0 auto;
+}
+
+.review-card {
+background-color: #2e2e44;
+padding: 20px;
+border-radius: 12px;
+margin-bottom: 20px;
+box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+.review-card strong {
+color: #ffcb6b;
+}
+
+.review-actions {
+margin-top: 10px;
+display: flex;
+gap: 10px;
+}
+
+.review-actions a,
+.review-actions button {
+padding: 8px 12px;
+border: none;
+border-radius: 6px;
+font-weight: 600;
+cursor: pointer;
+font-size: 0.9rem;
+text-align: center;
+transition: background-color 0.3s ease;
+}
+
+.review-actions a {
+background-color: #50fa7b;
+color: black;
+text-decoration: none;
+}
+
+.review-actions a:hover {
+background-color: #44e867;
+}
+
+.review-actions button {
+background-color: #ff5555;
+color: white;
+}
+
+.review-actions button:hover {
+background-color: #ff4444;
+}
+
+hr {
+border: none;
+border-bottom: 1px solid #444;
+margin: 25px 0;
+}
+
+.review-actions {
+margin-top: 12px;
+display: flex;
+gap: 12px;
+flex-wrap: wrap;
+}
+
+.review-actions a,
+.review-actions button {
+background-color: #44475a;
+color: #f8f8f2;
+padding: 8px 16px;
+border: none;
+border-radius: 6px;
+font-size: 0.95rem;
+font-weight: 600;
+cursor: pointer;
+text-decoration: none;
+transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.review-actions a:hover {
+background-color: #3b82f6;
+color: #ffffff;
+}
+
+.review-actions button {
+background-color: #ff5555;
+}
+
+.review-actions button:hover {
+background-color: #ff4444;
+}
