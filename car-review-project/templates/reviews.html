@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista Recensioni</title>
+</head>
+<body>
+    <h1>Recensioni</h1>
+    <a href="/">Torna alla Home</a>
+    <ul>
+        {% for review in reviews %}
+        <li>
+            <strong>Auto ID: {{ review['id_car'] }}</strong><br>
+            Utente: {{ review['user'] }}<br>
+            Voto: {{ review['rating'] }}<br>
+            Testo: {{ review['text'] }}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -13,5 +13,15 @@ reviews_col = db["reviews"]
 def index():
     return render_template("index.html")
 
+@app.route('/cars')
+def show_cars():
+    cars = list(cars_col.find())
+    return render_template("cars.html", cars=cars)
+
+@app.route('/reviews')
+def show_reviews():
+    reviews = list(reviews_col.find())
+    return render_template("reviews.html", reviews=reviews)
+
 if __name__ == "__main__":
     app.run(debug=True)

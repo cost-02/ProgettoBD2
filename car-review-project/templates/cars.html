@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista Auto</title>
+</head>
+<body>
+    <h1>Lista delle Auto</h1>
+    <a href="/">Torna alla Home</a>
+    <ul>
+        {% for car in cars %}
+        <li>
+            <strong>{{ car['Make'] }} {{ car['Model'] }}</strong> - {{ car.get('Year', 'Anno non disponibile') }}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
