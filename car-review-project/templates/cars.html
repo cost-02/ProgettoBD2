@@ -1,18 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
-    <title>Auto</title> 
-</head> 
+    <meta charset="UTF-8" />
+    <title>Lista delle Auto</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='cars.css') }}">
+</head>
 <body>
     <h1>Lista delle Auto</h1>
-        <a href="/">Torna alla Home</a> | <a href="/add_car">Aggiungi nuova auto</a>
-        <ul> {% for car in cars %}
-            <li> {{ car['Make'] }} {{ car['Model'] }} ({{ car['Year'] }})
-                <form action="{{ url_for('delete_car', car_id=car['_id']) }}" method="POST" style="display:inline;"> 
-                  <button type="submit" onclick="return confirm('Vuoi eliminare questa auto?')">Elimina</button> 
-                </form> 
-                <a href="{{ url_for('edit_car', car_id=car['_id']) }}">Modifica</a> 
-            </li> {% endfor %}
-         </ul>
+    <nav>
+        <a href="{{ url_for('index') }}">Torna alla Home</a> | 
+        <a href="{{ url_for('add_car') }}">Aggiungi nuova auto</a>
+    </nav>
+
+<!-- FILTRI -->
+<div class="filter-bar">
+    <form method="get" action="{{ url_for('cars') }}">
+        <button type="submit" name="make" value="tutte" class="{{ 'active' if (not selected_make or selected_make.lower() == 'tutte') else '' }}">Tutte</button>
+        {% for make in all_makes %}
+        <button type="submit" name="make" value="{{ make }}" class="{{ 'active' if selected_make == make else '' }}">{{ make }}</button>
+        {% endfor %}
+    </form>
+</div>
+
+<!-- SEZIONI PER MARCA -->
+{% for make, cars in cars_by_make.items() %}
+<section class="make-card">
+    <h2>{{ make }}</h2>
+    <div class="cars-container">
+        {% for car in cars %}
+        <a href="{{ url_for('show_reviews') }}?car_id={{ car['id'] }}" class="car-card-link">
+            <div class="car-card">
+                <h3>{{ car['Make'] }} {{ car['Model'] }} ({{ car['Year'] }})</h3>
+                <div class="actions">
+                    <form action="{{ url_for('delete_car', car_id=car['_id']) }}" method="POST" onsubmit="return confirm('Vuoi eliminare questa auto?')">
+                        <button type="submit" class="btn delete-btn">Elimina</button>
+                    </form>
+                    <a href="{{ url_for('edit_car', car_id=car['_id']) }}" class="btn edit-btn" onclick="event.stopPropagation();">Modifica</a>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+{% endfor %}
+
 </body>
 </html>

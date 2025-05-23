@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
     <title>Car Reviews</title>
 </head>
 <body>
-    <h1>Benvenuto nel progetto Car Reviews</h1>
-    <ul>
-        <li><a href="/cars">Visualizza Auto</a></li>
-        <li><a href="/reviews">Visualizza Recensioni</a></li>
-        <li><a href="/join">Visualizza JOIN</a></li>
-    </ul>
+    <div class="container">
+        <h1>Car Reviews</h1>
+        <ul>
+            <li><a href="/cars">Visualizza Auto</a></li>
+            <li><a href="/reviews">Visualizza Recensioni</a></li>
+            <li><a href="/join">Visualizza JOIN</a></li>
+        </ul>
+    </div>
 </body>
 </html>

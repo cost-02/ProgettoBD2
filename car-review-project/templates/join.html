@@ -1,29 +1,54 @@
-<!DOCTYPE html> 
-<html>
-<head> 
-<title>JOIN: Recensioni con Auto</title> 
-</head> 
-<body> 
-<h1>Recensioni con Informazioni sull'Auto</h1> 
-    <a href="/">Torna alla Home</a>
-        <ul> {% for review in reviews %} <li> 
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <title>Recensioni con Auto</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='join.css') }}">
+</head>
+<body>
+    <h1>Recensioni con Informazioni sull'Auto</h1>
 
-            {% if review.car_info and review.car_info[0] %}
-                <strong>Auto:</strong>
-                {{ review.car_info[0]['Make'] }} {{ review.car_info[0]['Model'] }}
-                ({{ review.car_info[0]['Year'] }})
-            {% else %}
-            <strong>Auto:</strong> Non trovata
-            {% endif %}
-            <br>
-            <strong>Utente:</strong> {{ review['Author_Name'] }}<br>
-            <strong>Voto:</strong> {{ review['Rating'] }}<br> 
-            <strong>Recensione:</strong> {{ review['Review_Title'] }}<br> 
-            {{review['Review']}}<br>
+    <nav>
+        <a href="{{ url_for('index') }}">Torna alla Home</a>
+    </nav>
 
-        
-    </li>
-    <hr>
-    {% endfor %}
-</ul>
-</body> </html>
+    <!-- FILTRI -->
+    <div class="filter-bar">
+        <form method="get" action="{{ url_for('show_join') }}">
+            <button type="submit" name="make" value="Tutti" class="{{ 'active' if (not selected_make or selected_make == 'Tutti') else '' }}">Tutti</button>
+            {% for make in makes %}
+            <button type="submit" name="make" value="{{ make }}" class="{{ 'active' if selected_make == make else '' }}">{{ make }}</button>
+            {% endfor %}
+        </form>
+    </div>
+
+    <!-- Recensioni raggruppate per marca -->
+    {% if reviews %}
+        {% for make, group in reviews|groupby('car_make') %}
+        <section class="make-card">
+            <h2>{{ make }}</h2>
+            <div class="reviews-container">
+                {% for review in group %}
+                <div class="review-container">
+                    <h3>
+                        {% if review.car_info and review.car_info[0] %}
+                        {{ review.car_info[0]['Make'] }} {{ review.car_info[0]['Model'] }} ({{ review.car_info[0]['Year'] }})
+                        {% else %}
+                        Auto non trovata
+                        {% endif %}
+                    </h3>
+                    <p><strong>Utente:</strong> {{ review['Author_Name'] }}</p>
+                    <p><strong>Voto:</strong> {{ review['Rating'] }}</p>
+                    <p><strong>Recensione:</strong> {{ review['Review_Title'] }}</p>
+                    <p>{{ review['Review'] }}</p>
+                    <!-- Qui puoi aggiungere eventuali bottoni azioni se servono -->
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        {% endfor %}
+    {% else %}
+        <p style="text-align:center;">Nessuna recensione trovata per questa marca.</p>
+    {% endif %}
+</body>
+</html>
