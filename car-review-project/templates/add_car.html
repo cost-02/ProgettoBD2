@@ -6,10 +6,17 @@
 </head> 
 <body>
     <h1>Aggiungi una nuova auto</h1>
-    <form method="POST"> Marca: <input type="text" name="make" required><br>
-         Modello: <input type="text" name="model" required>
-         <br> Anno: <input type="number" name="year" required><br>
-         <button type="submit">Salva</button> 
+    <form method="POST"> 
+        Marca: <input type="text" name="make" required><br>
+        Modello: <input type="text" name="model" required><br>
+        Anno: <input type="number" name="year" required><br>
+        Carburante: <input type="text" name="fuel"><br>
+        Cilindrata (cc): <input type="number" name="engine_size"><br>
+        Cavalli (CV): <input type="number" name="hp"><br>
+        Trasmissione: <input type="text" name="transmission"><br>
+        Prezzo di lancio (€): <input type="number" name="launch_price" step="0.01"><br>
+
+        <button type="submit">Salva</button> 
     </form> 
     <a href="/cars">Torna alla lista auto</a> 
 </body>

@@ -7,8 +7,14 @@
 <body> 
     <h1>Modifica Auto</h1> 
     <form method="POST"> Marca: <input type="text" name="make" value="{{ car['Make'] }}" required><br> 
-        Modello: <input type="text" name="model" value="{{ car['Model'] }}" required>
-        <br> Anno: <input type="number" name="year" value="{{ car['Year'] }}" required><br> 
+        Modello: <input type="text" name="model" value="{{ car['Model'] }}" required><br>
+        Anno: <input type="number" name="year" value="{{ car['Year'] }}" required><br> 
+        Carburante: <input type="text" name="fuel" value="{{ car.get('Engine Fuel Type', '') }}"><br>
+        Cilindri: <input type="number" name="engine_size" value="{{ car.get('Engine Cylinders', '') }}"><br>
+        Cavalli (HP): <input type="number" name="hp" value="{{ car.get('Engine HP', '') }}"><br>
+        Trasmissione: <input type="text" name="transmission" value="{{ car.get('Transmission Type', '') }}"><br>
+        Prezzo lancio (€): <input type="number" step="0.01" name="launch_price" value="{{ car.get('MSRP', '') }}"><br>
+
         <button type="submit">Aggiorna</button> </form> <a href="/cars">Torna alla lista auto</a> 
 </body> 
 </html>

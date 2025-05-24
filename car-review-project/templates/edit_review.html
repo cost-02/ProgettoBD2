@@ -11,8 +11,8 @@
         <label for="car_id">Auto:</label>
         <select name="car_id" required>
             {% for car in cars %}
-                <option value="{{ car['id'] }}" {% if car['id'] == review['car_id'] %}selected{% endif %}>
-                    {{ car['id'] }} - {{ car['Make'] }} {{ car['Model'] }}
+                <option value="{{ car['_id'] }}" {% if car['_id'] == review['car_id'] %}selected{% endif %}>
+                    {{ car['_id'] }} - {{ car['Make'] }} {{ car['Model'] }}
                 </option>
             {% endfor %}
         </select><br><br>

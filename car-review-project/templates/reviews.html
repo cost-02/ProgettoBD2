@@ -7,31 +7,38 @@
 <body>
     <h1>Recensioni</h1>
     <nav>
-    <a href="{{ url_for('index') }}">Torna alla Home</a>
-    <a href="{{ url_for('add_review') }}"> Aggiungi Recensione</a>
-</nav>
+        <a href="{{ url_for('index') }}">Torna alla Home</a>
+        <a href="{{ url_for('add_review') }}?car_id={{ car['_id'] }}">Aggiungi Recensione</a>
+    </nav>
 
-<ul class="review-list">
-    {% for review in reviews %}
-    <li class="review-card">
-        <p><strong>Auto ID:</strong> {{ review['car_id'] }}</p>
-        <p><strong>Utente:</strong> {{ review['Author_Name'] }}</p>
-        <p><strong>Voto:</strong> {{ review['Rating'] }}</p>
-        {% if review['Review_Title'] %}
-            <p><strong>Titolo:</strong> {{ review['Review_Title'] }}</p>
-        {% endif %}
-        <p><strong>Commento:</strong> {{ review['Review'] }}</p>
+    <ul class="review-list">
+        <li class="review-card">
+            <h3>{{ car['Make'] }} {{ car['Model'] }} ({{ car['Year'] }})</h3>
+            <p><strong>ID:</strong> {{ car['_id'] }}</p>
+            <p><strong>Carburante:</strong> {{ car['Engine Fuel Type'] }}</p>
+            <p><strong>Cilindrata:</strong> {{ car['Engine Cylinders'] }}</p>
+            <p><strong>CV:</strong> {{ car['Engine HP'] }}</p>
+            <p><strong>Trasmissione:</strong> {{ car['Transmission Type'] }}</p>
+            <p><strong>Prezzo lancio:</strong> {{ car['MSRP'] }}</p>
+        </li>
+        {% for review in reviews %}
+        <li class="review-card">
+            <!--<p><strong>Auto ID:</strong> {{ review['car_id'] }}</p>-->
+            <p><strong>Utente:</strong> {{ review['Author_Name'] }}</p>
+            <p><strong>Voto:</strong> {{ review['Rating'] }}</p>
+            {% if review['Review_Title'] %}
+                <p><strong>Titolo:</strong> {{ review['Review_Title'] }}</p>
+            {% endif %}
+            <p><strong>Commento:</strong> {{ review['Review'] }}</p>
 
-        <div class="review-actions">
-            <a href="{{ url_for('edit_review', review_id=review['_id']) }}">Modifica</a>
-            <form action="{{ url_for('delete_review', review_id=review['_id']) }}" method="POST" style="display:inline;">
-                <button type="submit">Elimina</button>
-            </form>
-        </div>
-    </li>
-    {% endfor %}
-</ul>
-
-
+            <div class="review-actions">
+                <a href="{{ url_for('edit_review', review_id=review['_id']) }}">Modifica</a>
+                <form action="{{ url_for('delete_review', review_id=review['_id']) }}" method="POST" style="display:inline;">
+                    <button type="submit">Elimina</button>
+                </form>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
