@@ -1,4 +1,3 @@
-```markdown
 # 🚗 Car Reviews App (NoSQL + Flask + MongoDB)
 
 **ProgettoBD2** — Applicazione web sviluppata per il corso universitario *Basi di Dati 2*, utilizzando **Python (Flask)** e **MongoDB** come database NoSQL.
@@ -90,4 +89,3 @@ car-reviews-app/
 
 📚 *Corso:* Basi di Dati 2 — Progetto NoSQL  
 📅 *Anno Accademico:* 2024/2025
-```
