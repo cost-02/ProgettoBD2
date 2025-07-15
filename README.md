@@ -28,10 +28,6 @@ Il database `car_project` contiene le seguenti collection:
 ## 🧰 Installazione
 
 1. **Clona il repository:**
-   ```bash
-   git clone https://github.com/tuo-username/car-reviews-app.git
-   cd car-reviews-app
-   ```
 
 2. **Crea un ambiente virtuale (opzionale ma consigliato):**
    ```bash
@@ -59,26 +55,6 @@ Il database `car_project` contiene le seguenti collection:
    python app.py
    ```
    L'app sarà disponibile su [http://127.0.0.1:5000](http://127.0.0.1:5000).
-
----
-
-## 📁 Struttura del progetto
-
-```
-car-reviews-app/
-│
-├── app.py
-├── requirements.txt
-├── cars.json
-├── reviews.json
-├── templates/
-│   ├── index.html
-│   ├── cars.html
-│   ├── reviews.html
-│   └── join.html          # Se presente
-├── static/                # Opzionale per CSS/JS
-└── README.md
-```
 
 ---
 
