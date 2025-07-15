@@ -29,21 +29,26 @@ Le due collection sono collegate tramite il campo `id_car`, che funge da chiave 
 1. **Clona il repository**
    
 2. **Crea un ambiente virtuale (opzionale ma consigliato)
+   
 python -m venv venv
 source venv/bin/activate     # Linux/macOS
 venv\Scripts\activate        # Windows
 
-3. **Installa le dipendenze
+4. **Installa le dipendenze
+   
 pip install -r requirements.txt
 
-4. **Avvia MongoDB (oppure assicurati che sia attivo su Atlas/localhost)
+6. **Avvia MongoDB (oppure assicurati che sia attivo su Atlas/localhost)
 
-5. **Importa i file JSON nel tuo database MongoDB
+7. **Importa i file JSON nel tuo database MongoDB
+
 mongoimport --db car_project --collection cars --file cars.json --jsonArray
 mongoimport --db car_project --collection reviews --file reviews.json --jsonArray
+
 nb. Assicurati che MongoDB sia attivo e che i file siano nella directory corretta.
 
-7. **Avvio dell'app Flask 🚀
+9. **Avvio dell'app Flask 🚀
+    
 Per eseguire l'app localmente:
 python app.py
 L'app sarà disponibile su http://127.0.0.1:5000.
