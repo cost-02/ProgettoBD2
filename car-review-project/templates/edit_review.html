@@ -24,7 +24,7 @@
         <input type="number" name="rating" min="0" max="5" step="0.1" value="{{ review['Rating'] }}" required><br><br>
 
         <label for="title_review">Titolo:</label><br>
-        <textarea name="title_review" rows="1" required></textarea><br><br>
+        <textarea name="title_review" rows="1" required>{{ review['Review_Title'] }}</textarea><br><br>
 
         <label for="text">Recensione:</label><br>
         <textarea name="text" rows="5" cols="50" required>{{ review['Review'] }}</textarea><br><br>

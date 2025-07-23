@@ -187,10 +187,10 @@ def edit_car(car_id):
             "Model": request.form['model'],
             "Year": request.form['year'],
             "Engine Fuel Type": request.form['fuel'],
-            "Engine Cylinders": int(request.form['engine_size']),
-            "Engine HP": int(request.form['hp']),
+            "Engine Cylinders": request.form['engine_size'],
+            "Engine HP": request.form['hp'],
             "Transmission Type": request.form['transmission'],
-            "MSRP": float(request.form['launch_price'])
+            "MSRP": request.form['launch_price']
         }
         cars_col.update_one({"_id": ObjectId(car_id)}, {"$set": updated_data})
         return redirect(url_for('show_reviews', car_id=car_id))
